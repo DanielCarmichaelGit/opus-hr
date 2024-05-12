@@ -1,0 +1,23 @@
+.Table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .HeaderRow {
+    background-color: #f0f0f0;
+  }
+  
+  .HeaderCell {
+    padding: 8px;
+    text-align: left;
+    font-weight: bold;
+  }
+  
+  .Row:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .Cell {
+    padding: 8px;
+    border: 1px solid #ddd;
+  }

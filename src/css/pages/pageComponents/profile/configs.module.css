@@ -1,0 +1,34 @@
+.ProfileConfigs {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    text-align: left;
+}
+
+.ProfileDetails {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+}
+
+.AvatarDetails {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: fit-content;
+}
+
+.AvatarInformation {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: fit-content;
+}
+
+.AvatarImage {
+    width: 200px;
+    height: 200px;
+}

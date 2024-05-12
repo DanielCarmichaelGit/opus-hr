@@ -1,0 +1,50 @@
+.Header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100% - 30px);
+    max-height: 60px;
+    height: fit-content;
+    padding: 10px 15px;
+    background-color: rgba(255, 255, 255, 0.26);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.HeaderLeft {
+    color: #333;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.HeaderRight {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.HeaderButton {
+    height: fit-content;
+    width: fit-content;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    border: none;
+    transition: 0.1s;
+}
+
+.HeaderButton:focus {
+    outline: none;
+}
+
+.HeaderButton:hover {
+    border: none;
+    background-color: rgba(137, 42, 226, 0.548);
+    color: black;
+    transition: 0.1s;
+}
