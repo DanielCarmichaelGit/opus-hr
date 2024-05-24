@@ -2,8 +2,10 @@
     width: 100%;
     height: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     overflow: auto;
+    column-gap: 10px;
+    overflow: hidden;
 }
 
 .HeroRow {
@@ -13,4 +15,17 @@
     height: 250px;
     background-color: transparent;
     column-gap: 10px;
+}
+
+.DashboardLeft {
+    width: 30%;
+    height: calc(100% - 20px);
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.DashboardRight {
+    width: 70%;
+    height: 100%;
 }

@@ -20,12 +20,6 @@ export default function Header() {
       </div>
       <div className={styles.HeaderRight}>
         <button
-          onClick={() => handleNavigation("/tests")}
-          className={styles.HeaderButton}
-        >
-          Tests
-        </button>
-        <button
           onClick={() => handleNavigation("/integrations")}
           className={styles.HeaderButton}
         >

@@ -1,8 +1,14 @@
 .Governor {
-    padding: 5px;
-    height: calc(100% - 71px);
-    width: calc(100% - 10px);
+    padding: 10px;
+    height: calc(100% - 76px);
+    width: calc(100% - 20px);
     margin-top: 61px;
+    overflow-x: visible;
+}
+
+.GovernorFull {
+    height: 100%;
+    width: 100%;
 }
 
 .Form {
@@ -17,6 +23,20 @@
     max-height: 800px;
     overflow: hidden;
     width: fit-content;
+    min-width: 400px;
+    border-radius: 5px;
+}
+
+.ModalForm {
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    text-align: left;
+    height: 100%;
+    row-gap: 20px;
+    justify-content: space-between;
+    max-height: 800px;
+    overflow: hidden;
     min-width: 400px;
     border-radius: 5px;
 }
@@ -101,12 +121,26 @@
 .InputGroupField {
     width: 100%;
     height: fit-content;
-    font-size: large;
+    font-size: small;
     padding: 10px;
     border-radius: 5px;
     background-color: #e5e5e5;
     border: 0px solid transparent;
     cursor: text;
+}
+
+.InputGroupTextArea {
+    max-width: calc(100% + 7px);
+    min-width: calc(100% + 7px);
+    padding: 5px;
+    font-size: small;
+    min-height: 150px;
+    max-height: 300px;
+    border-radius: 5px;
+}
+
+.InputGroupTextArea:focus {
+    outline: none;
 }
 
 .InputGroupField:focus {
@@ -146,4 +180,173 @@
     background-color: white;
     border-radius: 5px;
     padding: 5px;
+}
+
+.ModalContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: #33333357;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ModalContent {
+    height: 80%;
+    width: 80%;
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    row-gap: 10px;
+}
+
+.ModalHeader {
+    display: flex;
+    flex-direction: row;
+    height: fit-content;
+    width: 100%;
+    justify-content: space-between;
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
+}
+
+.ModalMain {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.ModalFooter {
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.ModalButton {
+    border: none;
+    width: fit-content;
+    background-color: #333;
+    color: white;
+}
+
+.ModalButton:focus {
+    outline: none;
+}
+
+.ModalButton:hover {
+    border: none;
+}
+
+.ModalIcon {
+    color: #333;
+}
+
+.ModalIcon:hover {
+    cursor: pointer;
+}
+
+.ModalIcon:focus {
+    outline: none;
+}
+
+.ToastContainerStyle {
+    width: fit-content !important;
+}
+
+.ColumnList {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: auto;
+    width: 100%;
+    row-gap: 10px;
+    margin-top: 10px;
+    overflow: visible;
+}
+
+.RowList {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+    row-gap: 10px;
+}
+
+.Card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    padding: 5px;
+    box-shadow: 0px 0px 10px #cfcfcf;
+    transition: 0.1s;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.Card:hover {
+    box-shadow: 0px 0px 10px #8a42ff;
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+.CardHeader {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: space-between;
+    text-align: left;
+    height: fit-content;
+    width: 100%;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.CardMain {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    text-align: left;
+    height: fit-content;
+    width: 100%;
+    margin-top: 15px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.CardFooter {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: fit-content;
+    width: 100%;
+}
+
+.CardTextWithLabel {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    width: 100%;
+    row-gap: 0px;
+}
+
+.CardContentWithLabel {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    width: 100%;
+    row-gap: 5px;
+}
+
+.Selected {
+    border: 1px solid #8a42ff;
+    transition: 0.2s;
 }

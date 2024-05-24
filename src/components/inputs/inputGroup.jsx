@@ -13,23 +13,25 @@ export default function InputGroup({
   return (
     <div className={governor.InputGroup}>
       <label className={governor.InputGroupLabel}>{label}</label>
-      {
-        hasInput ? (
-            <>
-                <input
-                className={governor.InputGroupField}
-                value={inputValue}
-                onChange={(e) => inputValueChange(e.target.value)}
-                type={inputType}
-                />
-                <Typography className={governor.InputGroupFieldError}>
-                    {errors[label] ? errors[label] : ""}
-                </Typography>
-            </>
-        ) : (
-            children
-        )
-      }
+      {hasInput ? (
+        <>
+          {inputType !== "textarea" ? (
+            <input
+              className={governor.InputGroupField}
+              value={inputValue}
+              onChange={(e) => inputValueChange(e.target.value)}
+              type={inputType}
+            />
+          ) : (
+            <textarea value={inputValue} onChange={(e) => inputValueChange(e.target.value)} className={governor.InputGroupTextArea} />
+          )}
+          <Typography className={governor.InputGroupFieldError}>
+            {errors[label] ? errors[label] : ""}
+          </Typography>
+        </>
+      ) : (
+        children
+      )}
     </div>
   );
 }

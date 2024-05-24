@@ -20,7 +20,7 @@ export default function Authenticate({ type = "login" }) {
 
   function handleSignupSubmit(formData) {
     // Handle the form data from the SignupForm component
-    fetchWrapper("/api/auth/signup", "", "POST", formData).then((res) => {
+    fetchWrapper("/api/auth/signup", "", "POST", formData, false).then((res) => {
       if (res.token) {
         localStorage.setItem("OPUS-TOKEN", res.token);
         window.location.replace("/")
@@ -30,7 +30,7 @@ export default function Authenticate({ type = "login" }) {
 
   function handleLoginSubmit(formData) {
     // Handle the form data from the SignupForm component
-    fetchWrapper("/api/auth/login", "", "POST", formData).then((res) => {
+    fetchWrapper("/api/auth/login", "", "POST", formData, false).then((res) => {
       if (res.token) {
         localStorage.setItem("OPUS-TOKEN", res.token);
         window.location.replace("/")

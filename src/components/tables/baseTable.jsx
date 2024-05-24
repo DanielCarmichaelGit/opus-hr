@@ -1,27 +1,45 @@
+import { Typography } from "@mui/material";
 import styles from "../../css/components/tables/baseTable.module.css";
 
-export default function BaseTable() {
+export default function BaseTable({ headers, rows, emptyMessage = "No table data found" }) {
   return (
-    <table className={styles.Table}>
-      <thead>
-        <tr className={styles.HeaderRow}>
-          <th className={styles.HeaderCell}>Column 1</th>
-          <th className={styles.HeaderCell}>Column 2</th>
-          <th className={styles.HeaderCell}>Column 3</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr className={styles.Row}>
-          <td className={styles.Cell}>Row 1, Cell 1</td>
-          <td className={styles.Cell}>Row 1, Cell 2</td>
-          <td className={styles.Cell}>Row 1, Cell 3</td>
-        </tr>
-        <tr className={styles.Row}>
-          <td className={styles.Cell}>Row 2, Cell 1</td>
-          <td className={styles.Cell}>Row 2, Cell 2</td>
-          <td className={styles.Cell}>Row 2, Cell 3</td>
-        </tr>
-      </tbody>
-    </table>
+    headers && rows ? (
+      <table className={styles.Table}>
+        <thead>
+          <tr className={styles.HeaderRow}>
+            {headers
+              ? headers.map((header) => {
+                  return (
+                    <th key={`header_${header}`} className={styles.HeaderCell}>
+                      {header}
+                    </th>
+                  );
+                })
+              : null}
+          </tr>
+        </thead>
+        <tbody>
+          {rows
+            ? rows.map((row, index) => {
+                return (
+                  <tr className={styles.Row} key={`row_${index}`}>
+                    {row.cells
+                      ? row.cells.map((cell, cellIndex) => {
+                          return (
+                            <td className={styles.Cell} key={`cell_${cellIndex}`}>
+                              {cell}
+                            </td>
+                          );
+                        })
+                      : null}
+                  </tr>
+                );
+              })
+            : null}
+        </tbody>
+      </table>
+    ) : (
+      <Typography variant="body1">{emptyMessage}</Typography>
+    )
   );
 }
