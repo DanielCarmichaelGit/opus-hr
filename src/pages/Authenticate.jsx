@@ -5,8 +5,8 @@ import SignupForm from "../components/forms/signup";
 import LoginForm from "../components/forms/login";
 import fetchWrapper from "../../utils/API/fetchWrapper";
 
-export default function Authenticate({ type = "login" }) {
-  const [selectedAuthOption, setSelectedAuthOption] = useState("login");
+export default function Authenticate({ type }) {
+  const [selectedAuthOption, setSelectedAuthOption] = useState();
 
   useEffect(() => {
     if (type) {
